@@ -1,0 +1,49 @@
+{
+  "name": "@austinz/ts-project-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/server.js",
+  "homepage": ".",
+  "scripts": {
+    "test": "mocha --require ts-node/register src/__tests__/**/*.ts",
+    "build": "npm i && tsc",
+    "start": "npm run build && node ./dist/server.js",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "keywords": [],
+  "author": "Austin Zhou <azhou3@glgroup.com>",
+  "license": "ISC",
+  "Dependencies": {
+    "typescript": "3.4.5"
+  },
+  "devDependencies": {
+    "@types/chai": "4.2.7",
+    "@types/mocha": "5.2.7",
+    "chai": "4.2.0",
+    "dotenv": "8.2.0",
+    "husky": "3.1.0",
+    "mocha": "6.2.2",
+    "prettier": "^1.19.1",
+    "pretty-quick": "2.0.1",
+    "ts-node": "8.5.4",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "3.7.3"
+  },
+  "dependencies": {
+    "@types/body-parser-xml": "^1.1.0",
+    "@types/dotenv": "8.2.0",
+    "@types/express": "^4.17.2",
+    "@types/lodash": "4.14.149",
+    "@types/node": "^12.12.17",
+    "body-parser-xml": "^1.1.0",
+    "express": "^4.17.1",
+    "lodash": "4.17.15"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
