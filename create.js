@@ -19,13 +19,14 @@ function Create() {
     path += "/";
   }
 
-  console.log(`mkdir -p ${path}${projectName}`);
+  //TODO: error handler... now mkdir failed but the rest steps will run
+  console.log(`mkdir ${path}${projectName}`);
   exec(`mkdir -p ${path}${projectName}`, function(err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     if (!err) {
       exec(`cp -r . ${path}${projectName}`, function(err, stdout, stderr) {
-        console.log(`cp -r . ${path}`);
+        console.log(`cp -r . ${path}${projectName}`);
         console.log(stdout);
         console.log(stderr);
         if (!err) {
