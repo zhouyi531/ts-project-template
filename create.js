@@ -31,10 +31,15 @@ function Create() {
         console.log(stderr);
         if (!err) {
           console.log(`rm -rf ${path}${projectName}/.git`);
-          exec(`rm -rf ${path}${projectName}/.git`, function(err, stdout, stderr) {
-            console.log(stdout);
-            console.log(stderr);
-          });
+          console.log(`rm -rf ${path}${projectName}/create.js`);
+          console.log(`mv ${path}${projectName}/.env.default ${path}${projectName}/.env`);
+          exec(
+            `rm -rf ${path}${projectName}/.git && rm -rf ${path}${projectName}/create.js && mv ${path}${projectName}/.env.default ${path}${projectName}/.env`,
+            function(err, stdout, stderr) {
+              console.log(stdout);
+              console.log(stderr);
+            },
+          );
         }
       });
     }
