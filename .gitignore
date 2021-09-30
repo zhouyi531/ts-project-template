@@ -70,4 +70,3 @@ build/
 *.svg
 .env
 /dist
-package-lock.json
