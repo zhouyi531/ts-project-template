@@ -1,6 +1,4 @@
-import * as bodyParser from "body-parser";
-import bodyParserXml from "body-parser-xml";
-import express, { Request, Response, NextFunction } from "express";
+import express from "express";
 import { Config } from "./config/config";
 import { logHandler, errorHandler } from "./utils";
 
@@ -23,13 +21,9 @@ class Server {
 
     process.env.TZ = "Asia/Shanghai";
     app.set("server_started_at", "" + new Date());
-    app.use(bodyParser.urlencoded({ extended: false }));
-    app.use(bodyParser.json());
-    bodyParserXml(bodyParser);
-    // @ts-ignore
-    app.use(bodyParser.xml());
 
     app.get("/", (req, res) => {
+      logHandler("/", "hello", { message: "default handler touched!" });
       res.send("Last deployed at:" + app.get("server_started_at"));
     });
 
