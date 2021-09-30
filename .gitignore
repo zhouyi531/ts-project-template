@@ -70,6 +70,4 @@ build/
 *.svg
 .env
 /dist
-
-*.amr
-*.mp3
+package-lock.json
