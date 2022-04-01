@@ -44,7 +44,7 @@ class Server {
       res.status(500).send("something is broken, please check the error log for details");
     });
 
-    app.listen(Config.serverPort);
+    app.listen(3000, "0.0.0.0");
     console.log(`running at port ${Config.serverPort}, ${app.get("server_started_at")} `);
   }
 }
